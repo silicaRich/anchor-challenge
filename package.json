@@ -1,0 +1,41 @@
+{
+  "name": "podcastPlayer",
+  "version": "1.0.0",
+  "description": "Podcast Player\r =============================================",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open || run",
+    "build": "webpack --mode production",
+    "run": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellofreshdevtests/silicaRich-frontend-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hellofreshdevtests/silicaRich-frontend-test/issues"
+  },
+  "homepage": "https://github.com/hellofreshdevtests/silicaRich-frontend-test#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "http-server": "^0.11.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "styled-components": "^3.3.3"
+  }
+}

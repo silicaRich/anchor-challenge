@@ -5,13 +5,16 @@ import axios from 'axios';
 
 class Player extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             tracks: [],
             isLoading: false,
             currentTrack: 0
         }
+        
+        this.prevTrack = this.prevTrack.bind(this);
+        this.nextTrack = this.nextTrack.bind(this);
     }
 
     componentDidMount() {
@@ -31,14 +34,15 @@ class Player extends Component {
     }
 
     prevTrack(){
-        if (this.state.currentTrack - 1 > 0) {               
+        if (this.state.currentTrack > 0) {               
             this.setState({ currentTrack : this.state.currentTrack -= 1});
         } else {
             this.setState({ currentTrack : this.state.tracks.length -1});
         }
     }
+
     nextTrack(){
-        if (this.state.currentTrack + 1 < this.state.tracks.length < 1) {              
+        if (this.state.currentTrack + 1 < this.state.tracks.length) {              
             this.setState({ currentTrack : this.state.currentTrack += 1 });
         } else {
             this.setState({ currentTrack : 0});
@@ -46,12 +50,14 @@ class Player extends Component {
     }
 
     render() {
-        let track = this.state.tracks[this.state.currentTrack];
         return (
               <Styles.PlayerContainer>
-                  { this.state.tracks.length > 0 && 
-                    <Track track={this.state.tracks[this.state.currentTrack]} />  
-                  }
+                <Styles.Prev onClick={this.prevTrack} src="src/assets/prev.png"/>
+                { 
+                    this.state.tracks.length > 0 && 
+                    <Track track={this.state.tracks[this.state.currentTrack]} onTrackEnd={this.nextTrack} /> 
+                }       
+                <Styles.Next onClick={this.nextTrack} src="src/assets/next.png"/>
              </Styles.PlayerContainer> 
         );
     }

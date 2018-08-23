@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {darkGray} from "./assets/constants";
+import {green} from "./assets/constants";
 
 export const MainWrapper = styled.div`
     font-family:Helvetica;
@@ -16,7 +16,7 @@ export const Nav = styled.div`
     left: 0;  
     height: 66px;
     padding: 0 15px;
-    background: ${darkGray};
+    background: ${green};
     width:100%;
     display: flex;
     align-items: center;
